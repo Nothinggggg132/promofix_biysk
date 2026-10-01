@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PromoFix — Бийск | Работа для промоутеров</title>
     <style>
+        /* Главные настройки страницы */
         body { 
             margin: 0; 
             padding: 0; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             background-color: #0b0b0c; 
             color: #ffffff; 
+            overflow: hidden; /* Запрещаем случайную прокрутку страницы */
         }
         
-        /* Фиолетово-черная аккуратная шапка */
+        /* Стильная полупрозрачная шапка с эффектом размытия */
         header {
             position: absolute; 
             top: 0; 
             left: 0; 
             right: 0; 
             height: 64px;
-            background-color: #121214; 
+            background: rgba(18, 18, 20, 0.8); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             display: flex; 
             align-items: center;
             justify-content: space-between; 
@@ -29,6 +33,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
         }
         
+        /* Логотип PromoFix */
         .logo { 
             font-weight: 700; 
             font-size: 18px; 
@@ -37,9 +42,10 @@
             text-transform: uppercase; 
         }
         .logo span { 
-            color: #8a2be2; 
+            color: #8a2be2; /* Фиолетовый акцент */
         }
 
+        /* Плашка города Бийск */
         .city { 
             background: rgba(255, 255, 255, 0.05); 
             color: #bcbcc2;
@@ -50,7 +56,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Контейнер для Яндекс Карты */
+        /* Контейнер, который растягивает карту ровно на весь экран */
         .map-container { 
             position: absolute; 
             top: 64px; 
@@ -58,26 +64,27 @@
             width: 100%; 
         }
         .map-container iframe { 
-            width: 100%; 
-            height: 100%; 
-            border: none; 
+            width: 100% !important; 
+            height: 100% !important; 
+            border: none !important; 
         }
 
-        /* Карточка с информацией поверх карты */
+        /* Карточка с информацией слева поверх карты */
         .info-panel {
             position: absolute; 
             top: 88px; 
             left: 20px; 
             width: 280px;
-            background: #121214; 
+            background: rgba(18, 18, 20, 0.9); 
             padding: 24px; 
             border-radius: 16px;
             z-index: 5; 
             border: 1px solid rgba(255, 255, 255, 0.08); 
             box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
         }
         
-        /* Красивая фиолетовая кнопка */
+        /* Стильная фиолетовая кнопка */
         .btn-apply {
             display: block; 
             text-align: center; 
@@ -88,24 +95,32 @@
             text-decoration: none; 
             font-weight: bold;
             margin-top: 20px; 
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-apply:hover {
+            background-color: #9932cc;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
         }
     </style>
 </head>
 <body>
 
+    <!-- Верхняя панель -->
     <header>
         <div class="logo">PROMO<span>FIX</span></div>
         <div class="city">📍 Бийск</div>
     </header>
 
+    <!-- Информационное окно -->
     <div class="info-panel">
         <h3 style="margin-top: 0; margin-bottom: 10px; color: #ffffff; font-size: 18px;">Карта районов</h3>
         <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin: 0;">Выбирай свободный район в Бийске рядом с домом, оставляй заявку в нашем Telegram-канале и приступай к подработке!</p>
         <a href="https://t.me/PROMOFIX_CHANNELL" target="_blank" class="btn-apply">Telegram-канал</a>
     </div>
 
+    <!-- Блок с вашей картой (теперь высота 100% автоматически подстроится под экран) -->
     <div class="map-container">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" width="100%" height="690" frameborder="0"></iframe>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 
 </body>
