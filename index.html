@@ -15,16 +15,17 @@
             overflow: hidden; /* Запрещаем случайную прокрутку страницы */
         }
         
-        /* ШАПКА В ВИДЕ ОСТРОВКА ПО СЕРЕДИНЕ */
+        /* ШАПКА: УЗКИЙ ОСТРОВОК РОВНО ПО ЦЕНТРУ */
         header {
             position: absolute; 
-            top: 15px; /* Отступ сверху от края экрана */
-            left: 20px; /* Отступ слева */
-            right: 20px; /* Отступ справа */
-            height: 60px;
-            /* Высчитываем ширину, чтобы она была по центру и не на весь экран на компьютерах */
-            max-width: 1200px;
-            margin: 0 auto; 
+            top: 15px; /* Отступ сверху */
+            left: 10px; /* Минимальные отступы по бокам для мобильных */
+            right: 10px;
+            height: 54px; /* Сделали чуть-чуть поуже по высоте */
+            
+            /* Жесткая ширина островка — он будет узким и компактным */
+            max-width: 340px; 
+            margin: 0 auto; /* Магия CSS: выравнивает блок ровно по центру экрана */
             
             /* Эффект матового стекла */
             background: rgba(18, 18, 20, 0.85); 
@@ -34,12 +35,11 @@
             display: flex; 
             align-items: center;
             justify-content: space-between; 
-            padding: 0 20px; 
+            padding: 0 16px; 
             z-index: 10; 
             
-            /* Красивое скругление углов, чтобы получился островок */
-            border-radius: 16px; 
-            /* Тонкая рамка и тень для эффекта парения */
+            /* Круглое скругление и тени */
+            border-radius: 20px; 
             border: 1px solid rgba(255, 255, 255, 0.1); 
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
         }
@@ -47,13 +47,13 @@
         /* Логотип PromoFix */
         .logo { 
             font-weight: 700; 
-            font-size: 18px; 
+            font-size: 16px; /* Чуть уменьшили для компактности */
             color: #ffffff; 
             letter-spacing: 1.5px; 
             text-transform: uppercase; 
         }
         .logo span { 
-            color: #8a2be2; /* Фиолетовый акцент */
+            color: #8a2be2; 
         }
 
         /* Плашка города Бийск */
