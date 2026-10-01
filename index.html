@@ -3,60 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PromoVibe — Бийск | Работа для промоутеров</title>
+    <title>PromoFix — Бийск | Работа для промоутеров</title>
     <style>
-        /* Делаем красивый темный фон для сайта */
-        body { margin: 0; padding: 0; font-family: sans-serif; background-color: #111; color: #fff; }
+        /* Делаем красивый темный фон для всего сайта */
+        body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #0b0b0c; color: #fff; }
         
-        /* Черная шапка сайта сверху */
+        /* ТОЧНАЯ КОПИЯ ШАПКИ С PROMOFIX */
         header {
-            position: absolute; top: 0; left: 0; right: 0; height: 60px;
-            background: rgba(20, 20, 20, 0.9); display: flex; align-items: center;
-            justify-content: space-between; padding: 0 20px; z-index: 10; border-bottom: 1px solid #333;
+            position: absolute; top: 0; left: 0; right: 0; height: 64px;
+            /* Полупрозрачный темный цвет */
+            background: rgba(11, 11, 12, 0.8); 
+            /* Эффект размытия карты под шапкой (стеклянный эффект) */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex; align-items: center;
+            justify-content: space-between; padding: 0 24px; z-index: 10; 
+            /* Тонкая фирменная рамка снизу */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
         }
-        .logo { font-weight: bold; font-size: 20px; color: #00ff66; letter-spacing: 1px; }
-        .city { background: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; }
-
-        /* Контейнер для карты под шапкой */
-        .map-container { position: absolute; top: 60px; bottom: 0; width: 100%; }
         
-        /* Растягиваем саму Яндекс Карту на весь экран */
+        /* Стиль логотипа */
+        .logo { font-weight: 700; font-size: 18px; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; }
+        .logo span { color: #00ff66; } /* Делаем кусочек логотипа зеленым, если нужно */
+
+        /* Стиль плашки с городом */
+        .city { 
+            background: rgba(255, 255, 255, 0.05); 
+            color: #bcbcc2;
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            font-size: 13px; 
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Контейнер для карты под шапкой (опускаем чуть ниже под размер шапки) */
+        .map-container { position: absolute; top: 64px; bottom: 0; width: 100%; }
         .map-container iframe { width: 100%; height: 100%; border: none; }
 
-        /* Белая информационная плашка поверх карты */
+        /* Панель поверх карты */
         .info-panel {
-            position: absolute; top: 80px; left: 20px; width: 280px;
-            background: rgba(20, 20, 20, 0.95); padding: 20px; border-radius: 12px;
-            z-index: 5; border: 1px solid #444; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            position: absolute; top: 88px; left: 20px; width: 280px;
+            background: rgba(18, 18, 20, 0.9); padding: 24px; border-radius: 16px;
+            z-index: 5; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
         }
-        /* Зеленая кнопка для связи */
+        
+        /* Кнопка */
         .btn-apply {
             display: block; text-align: center; background: #00ff66; color: #000;
-            padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold;
-            margin-top: 15px;
+            padding: 14px; border-radius: 10px; text-decoration: none; font-weight: bold;
+            margin-top: 20px; transition: background 0.2s ease;
         }
+        .btn-apply:hover { background: #00dd59; }
     </style>
 </head>
 <body>
 
     <!-- Шапка сайта -->
     <header>
-        <div class="logo">PROMOFIX</div>
+        <div class="logo">PROMO<span>FIX</span></div>
         <div class="city">📍 Бийск</div>
     </header>
 
     <!-- Окно с информацией слева -->
     <div class="info-panel">
-        <h3 style="margin-top: 0; color: #00ff66;">Карта районов</h3>
-        <p style="font-size: 14px; line-height: 1.4;">Выбирай свободный район в Бийске рядом с домом, оставляй заявку и приступай к подработке промоутером!</p>
+        <h3 style="margin-top: 0; margin-bottom: 10px; color: #fff; font-size: 18px;">Карта районов</h3>
+        <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin: 0;">Наш телеграм-канал</p>
         <!-- Замените ссылку ниже на ваш Телеграм или Ватсап -->
         <a href="https://t.me/PROMOFIX_CHANNELL" target="_blank" class="btn-apply">Стать промоутером</a>
     </div>
 
-    <!-- Блок, куда мы вставим карту -->
+    <!-- Блок с картой -->
     <div class="map-container">
         
-        <!-- ВСТАВЬТЕ СКОПИРОВАННЫЙ В ЯНДЕКСЕ КОД IFRAME ПРЯМО СЮДА (СТРОЧКОЙ НИЖЕ) -->
+        <!-- ВСТАВЬТЕ СЮДА ВАШ СКОПИРОВАННЫЙ В ЯНДЕКСЕ КОД IFRAME -->
 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" width="600" height="450" frameborder="0"></iframe>
         
     </div>
