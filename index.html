@@ -8,20 +8,20 @@
         /* Делаем красивый темный фон для всего сайта */
         body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #0b0b0c; color: #fff; }
         
-        /* /* ТОЧНАЯ КОПИЯ ШАПКИ С PROMOVIBE */
-header {
-    position: absolute; top: 0; left: 0; right: 0; height: 64px;
-    background: rgba(11, 11, 12, 0.8); 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    display: flex; align-items: center;
-    justify-content: space-between; padding: 0 24px; z-index: 10; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
-}
+        /* ТОЧНАЯ КОПИЯ ШАПКИ С PROMOVIBE */
+        header {
+            position: absolute; top: 0; left: 0; right: 0; height: 64px;
+            background: rgba(11, 11, 12, 0.8); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex; align-items: center;
+            justify-content: space-between; padding: 0 24px; z-index: 10; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+        }
         
         /* Стиль логотипа */
         .logo { font-weight: 700; font-size: 18px; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; }
-        .logo span { color: #00ff66; } /* Делаем кусочек логотипа зеленым, если нужно */
+        .logo span { color: #00ff66; }
 
         /* Стиль плашки с городом */
         .city { 
@@ -34,7 +34,7 @@ header {
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Контейнер для карты под шапкой (опускаем чуть ниже под размер шапки) */
+        /* Контейнер для карты под шапкой */
         .map-container { position: absolute; top: 64px; bottom: 0; width: 100%; }
         .map-container iframe { width: 100%; height: 100%; border: none; }
 
@@ -66,17 +66,13 @@ header {
     <!-- Окно с информацией слева -->
     <div class="info-panel">
         <h3 style="margin-top: 0; margin-bottom: 10px; color: #fff; font-size: 18px;">Карта районов</h3>
-        <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin: 0;">Наш телеграм-канал</p>
-        <!-- Замените ссылку ниже на ваш Телеграм или Ватсап -->
+        <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin: 0;">Выбирай свободный район в Бийске рядом с домом, оставляй заявку в нашем Telegram-канале и приступай к подработке!</p>
         <a href="https://t.me/PROMOFIX_CHANNELL" target="_blank" class="btn-apply">Стать промоутером</a>
     </div>
 
-    <!-- Блок с картой -->
+    <!-- Блок с картой (размеры изменены на 100%, чтобы карта растянулась) -->
     <div class="map-container">
-        
-        <!-- ВСТАВЬТЕ СЮДА ВАШ СКОПИРОВАННЫЙ В ЯНДЕКСЕ КОД IFRAME -->
-<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" width="600" height="450" frameborder="0"></iframe>
-        
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 
 </body>
