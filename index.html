@@ -114,9 +114,9 @@
         .map-container { 
             position: absolute; 
             top: 0; 
-            left: 0; 
-            right: 0;
-            width: 100%; 
+            left: -10px; 
+            right: -10px;
+            width: calc(100% + 20px); 
             height: calc(100% + 160px); 
             z-index: 1;
         }
@@ -127,7 +127,7 @@
             width: 100% !important; 
             height: 100% !important; 
             border: none !important; 
-            display: none; /* Изначально прячем обе карты, включим первую через JS */
+            display: none; /* Изначально прячем обе карты */
         }
         /* Показываем карту, у которой есть класс active */
         .map-container iframe.active {
@@ -141,6 +141,7 @@
     <header>
         <div class="logo">PROMO<span>FIX</span></div>
     </header>
+
     <!-- Единый блок управления под шапкой -->
     <div class="controls-panel">
         <!-- Кнопка Телеграм -->
@@ -155,11 +156,11 @@
 
     <!-- Блок с вашими картами -->
     <div class="map-container">
-        <!-- Карта 1: Расклейка (Ваша текущая основная карта Яндекса) -->
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" width="600" height="450" frameborder="0"></iframe>
+        <!-- Карта 1: Расклейка -->
+        <iframe id="map1" class="active" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" frameborder="0"></iframe>
         
-        <!-- Карта 2: Листовки (ВСТАВЬТЕ СЮДА ССЫЛКУ НА ВТОРУЮ КАРТУ ИЗ ЯНДЕКСА вместо текста ниже) -->
-       <https://yandex.ru/map-widget/v1/?um=constructor%3Aa7661f898079f97969a76f41717c905b8cd106e76b31d1e3e574cd628c4cfdc8&amp;source=constructor"></iframe>
+        <!-- Карта 2: Листовки -->
+        <iframe id="map2" src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa7661f898079f97969a76f41717c905b8cd106e76b31d1e3e574cd628c4cfdc8&amp;source=constructor" frameborder="0"></iframe>
     </div>
 
     <!-- Исправленная логика переключения -->
