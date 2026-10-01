@@ -67,13 +67,13 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* КОНТЕЙНЕР ДЛЯ КАРТЫ С ХИТРОСТЬЮ ПРОТИВ РЕКЛАМЫ */
+        /* КОНТЕЙНЕР ДЛЯ КАРТЫ С УВЕЛИЧЕННЫМ ОТСТУПОМ ПРОТИВ РЕКЛАМЫ */
         .map-container { 
             position: absolute; 
             top: 0; 
-            left: 0;
-            width: 100%; 
-            /* Делаем карту на 50 пикселей длиннее экрана, чтобы спрятать рекламу */
+            left: -10px; 
+            right: -10px;
+            width: calc(100% + 20px); 
             height: calc(100% + 160px); 
             z-index: 1;
         }
@@ -83,22 +83,27 @@
             border: none !important; 
         }
 
-        /* ПАРЯЩАЯ ФИОЛЕТОВАЯ КНОПКА СЛЕВА ПОВЕРХ КАРТЫ */
+        /* ФИОЛЕТОВАЯ КНОПКА: ТЕПЕРЬ СТРОГО ПО ЦЕНТРУ ПОД ШАПКОЙ */
         .btn-apply {
             position: absolute;
-            top: 85px; /* Расположена прямо под шапкой */
-            left: 20px; 
+            top: 84px; /* Ровно под шапкой (54px высота шапки + 15px отступ + небольшой зазор) */
+            left: 10px; 
+            right: 10px;
             z-index: 5;
             
             display: block; 
             text-align: center; 
             background-color: #8a2be2; 
             color: #ffffff;
-            padding: 14px 24px; 
+            padding: 12px 24px; 
             border-radius: 14px; 
             text-decoration: none; 
             font-weight: bold;
             font-size: 14px;
+            
+            /* Делаем её ширину такой же компактной, как у шапки */
+            max-width: 290px;
+            margin: 0 auto; /* Магия центрирования */
             
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
