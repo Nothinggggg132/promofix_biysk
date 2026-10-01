@@ -15,7 +15,7 @@
             overflow: hidden; /* Запрещаем прокрутку самой страницы сайта */
         }
         
-        /* ШАПКА: УЗКИЙ ОСТРОВОК РОВНО ПО ЦЕНТРУ */
+        /* ШАПКА: КОМПАКТНЫЙ ОСТРОВОК С НАЗВАНИЕМ ПО ЦЕНТРУ */
         header {
             position: absolute; 
             top: 15px; 
@@ -23,9 +23,9 @@
             right: 10px;
             height: 54px; 
             
-            /* Жесткая ширина островка */
-            max-width: 340px; 
-            margin: 0 auto; /* Выравнивает блок ровно по центру экрана */
+            /* Узкая фиксированная ширина для идеального центрирования */
+            max-width: 240px; 
+            margin: 0 auto; /* Центрирование всей шапки */
             
             /* Эффект матового стекла */
             background: rgba(18, 18, 20, 0.85); 
@@ -34,8 +34,7 @@
             
             display: flex; 
             align-items: center;
-            justify-content: space-between; 
-            padding: 0 16px; 
+            justify-content: center; /* Выравнивает логотип строго по центру внутри шапки */
             z-index: 10; 
             
             /* Круглое скругление и тени */
@@ -47,13 +46,14 @@
         /* Логотип PromoFix */
         .logo { 
             font-weight: 700; 
-            font-size: 16px; 
+            font-size: 18px; /* Сделали шрифт чуть крупнее и заметнее */
             color: #ffffff; 
-            letter-spacing: 1.5px; 
+            letter-spacing: 2px; 
             text-transform: uppercase; 
+            text-align: center;
         }
         .logo span { 
-            color: #8a2be2; 
+            color: #8a2be2; /* Наш фирменный фиолетовый */
         }
 
         /* Плашка города Бийск */
