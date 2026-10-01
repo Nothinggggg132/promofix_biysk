@@ -1,16 +1,65 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>Моя карта расклейки Бийск</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoVibe — Бийск | Работа для промоутеров</title>
     <style>
-        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
-        iframe { width: 100%; height: 100vh; border: none; }
+        /* Делаем красивый темный фон для сайта */
+        body { margin: 0; padding: 0; font-family: sans-serif; background-color: #111; color: #fff; }
+        
+        /* Черная шапка сайта сверху */
+        header {
+            position: absolute; top: 0; left: 0; right: 0; height: 60px;
+            background: rgba(20, 20, 20, 0.9); display: flex; align-items: center;
+            justify-content: space-between; padding: 0 20px; z-index: 10; border-bottom: 1px solid #333;
+        }
+        .logo { font-weight: bold; font-size: 20px; color: #00ff66; letter-spacing: 1px; }
+        .city { background: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; }
+
+        /* Контейнер для карты под шапкой */
+        .map-container { position: absolute; top: 60px; bottom: 0; width: 100%; }
+        
+        /* Растягиваем саму Яндекс Карту на весь экран */
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+
+        /* Белая информационная плашка поверх карты */
+        .info-panel {
+            position: absolute; top: 80px; left: 20px; width: 280px;
+            background: rgba(20, 20, 20, 0.95); padding: 20px; border-radius: 12px;
+            z-index: 5; border: 1px solid #444; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        /* Зеленая кнопка для связи */
+        .btn-apply {
+            display: block; text-align: center; background: #00ff66; color: #000;
+            padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
 
-    <<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" width="600" height="450" frameborder="0"></iframe>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">PROMOVIBE</div>
+        <div class="city">📍 Бийск</div>
+    </header>
+
+    <!-- Окно с информацией слева -->
+    <div class="info-panel">
+        <h3 style="margin-top: 0; color: #00ff66;">Карта районов</h3>
+        <p style="font-size: 14px; line-height: 1.4;">Выбирай свободный район в Бийске рядом с домом, оставляй заявку и приступай к подработке промоутером!</p>
+        <!-- Замените ссылку ниже на ваш Телеграм или Ватсап -->
+        <a href="https://t.me" target="_blank" class="btn-apply">Стать промоутером</a>
+    </div>
+
+    <!-- Блок, куда мы вставим карту -->
+    <div class="map-container">
+        
+        <!-- ВСТАВЬТЕ СКОПИРОВАННЫЙ В ЯНДЕКСЕ КОД IFRAME ПРЯМО СЮДА (СТРОЧКОЙ НИЖЕ) -->
+<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" width="600" height="450" frameborder="0"></iframe>
+        
+    </div>
 
 </body>
 </html>
