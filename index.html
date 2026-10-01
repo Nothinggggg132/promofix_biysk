@@ -141,7 +141,6 @@
     <header>
         <div class="logo">PROMO<span>FIX</span></div>
     </header>
-
     <!-- Единый блок управления под шапкой -->
     <div class="controls-panel">
         <!-- Кнопка Телеграм -->
@@ -149,34 +148,38 @@
         
         <!-- Переключатель карт -->
         <div class="map-switcher">
-            <button class="switch-btn active" onclick="switchMap(1)">Карта 1</button>
-            <button class="switch-btn" onclick="switchMap(2)">Карта 2</button>
+            <button id="btn1" class="switch-btn active" onclick="switchMap(1)">Расклейка</button>
+            <button id="btn2" class="switch-btn" onclick="switchMap(2)">Листовки</button>
         </div>
     </div>
 
     <!-- Блок с вашими картами -->
     <div class="map-container">
-        <!-- Карта 1 (Ваша текущая основная карта) -->
+        <!-- Карта 1: Расклейка (Ваша текущая основная карта Яндекса) -->
         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad6e7f9359458fc60318d59e0f2c5e7e4e3df01da34cf8e1c3191aae0cfc99330&amp;source=constructor" width="600" height="450" frameborder="0"></iframe>
         
-        <!-- Карта 2 (ВСТАВЬТЕ СЮДА ССЫЛКУ НА ВТОРУЮ КАРТУ ИЗ ШАГА 1 вместо текста ниже) -->
-        <https://yandex.ru/map-widget/v1/?um=constructor%3Aa7661f898079f97969a76f41717c905b8cd106e76b31d1e3e574cd628c4cfdc8&amp;source=constructor"></iframe>
+        <!-- Карта 2: Листовки (ВСТАВЬТЕ СЮДА ССЫЛКУ НА ВТОРУЮ КАРТУ ИЗ ЯНДЕКСА вместо текста ниже) -->
+       <https://yandex.ru/map-widget/v1/?um=constructor%3Aa7661f898079f97969a76f41717c905b8cd106e76b31d1e3e574cd628c4cfdc8&amp;source=constructor"></iframe>
     </div>
 
-    <!-- Логика переключения без перезагрузки -->
+    <!-- Исправленная логика переключения -->
     <script>
         function switchMap(mapNumber) {
-            // Убираем активность со всех кнопок и карт
-            document.querySelectorAll('.switch-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.map-container iframe').forEach(iframe => iframe.classList.remove('active'));
+            // Сбрасываем активность со всех кнопок переключателя
+            document.getElementById('btn1').classList.remove('active');
+            document.getElementById('btn2').classList.remove('active');
             
-            // Включаем нужную карту и кнопку
-            if(mapNumber === 1) {
+            // Скрываем обе карты
+            document.getElementById('map1').classList.remove('active');
+            document.getElementById('map2').classList.remove('active');
+            
+            // Включаем нужную карту и подсвечиваем её кнопку
+            if (mapNumber === 1) {
+                document.getElementById('btn1').classList.add('active');
                 document.getElementById('map1').classList.add('active');
-                document.querySelectorAll('.switch-btn')[0].classList.add('active');
             } else {
+                document.getElementById('btn2').classList.add('active');
                 document.getElementById('map2').classList.add('active');
-                document.querySelectorAll('.switch-btn')[1].classList.add('active');
             }
         }
     </script>
